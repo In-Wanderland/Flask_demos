@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block Title %} hypergeometric Calculator {% endblock %}
+{% block content %}
+<form href="/" method="post">
+    successes in population: <input name="successes"
+    type="number" value="{{ successes }}"/>
+    <br>
+    Number of successes in this simulation: <input name="input"
+    type="number" value="{{ input }}"/>
+    <br>
+
+    <input type="submit" value="calculate"/>
+    <br>
+result: {{ result }}        
+</form>
+<div style="color: red">
+{% if error %}
+    You have generated an error due to impossible input values
+{% endif %}
+</div>
+{% endblock %}
